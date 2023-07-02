@@ -14,7 +14,7 @@ public class LoginTest extends TestBase{
     public void testLogin() {
         test = extent.createTest("Login Function Test");
         loginPage = new LoginPage(getPage());
-//        dashboardPage = new DashboardPage(getPage());
+        dashboardPage = new DashboardPage(getPage());
         loginPage.login();
         Assert.assertTrue(dashboardPage.isLogoutButtonVisible(), "Logout button is not visible.");
         test.pass("login to account with valid email and valid password");
