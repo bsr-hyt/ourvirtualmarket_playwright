@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 
 public class TestBase {
 
-    protected Page page;
+    protected static Page page;
     protected ExtentReports extent;
     protected ExtentTest test;
     protected ExtentHtmlReporter htmlReporter;
@@ -31,6 +31,7 @@ public class TestBase {
     @BeforeClass
     public void setUp() {
         Driver.initialize();
+        page = Driver.getPage();
     }
 
     @AfterClass
@@ -45,11 +46,13 @@ public class TestBase {
             test.fail(result.getThrowable());
 
             // Ekran görüntüsü alma ve rapora ekleme
-            String screenshotName = result.getName() + ".png";
-            Path screenshotPath = Paths.get("screenshots", screenshotName);
-            page.screenshot(new Page.ScreenshotOptions().setPath(screenshotPath));
+            if (page != null) {
+                String screenshotName = result.getName() + ".png";
+                Path screenshotPath = Paths.get("screenshots", screenshotName);
+                page.screenshot(new Page.ScreenshotOptions().setPath(screenshotPath));
 
-            test.addScreenCaptureFromPath(screenshotPath.toString());
+                test.addScreenCaptureFromPath(screenshotPath.toString());
+            }
         } else if (result.getStatus() == ITestResult.SKIP) {
             test.skip(result.getThrowable());
         } else {
