@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class TestBase {
+public class BaseTest {
 
     protected static Page page;
     protected ExtentReports extent;

@@ -35,7 +35,8 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+						<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
 		<!-- report name -->
 		<span class='report-name'>ExtentReports</span>
@@ -44,7 +45,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Jul 2, 2023 10:49:15 PM</span>
+			<span class='label blue darken-3 suite-start-time'>Jul 4, 2023 08:18:52 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -60,6 +61,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -102,10 +104,10 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>1</span> test(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                    <span class='strong tooltipped' data-position='top' data-tooltip='50%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
                 </div>
             </div>
         </div>
@@ -126,14 +128,14 @@
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Login Function Test</span>
-						<span class='test-time'>Jul 2, 2023 10:49:57 PM</span>
+						<span class='test-time'>Jul 4, 2023 08:19:22 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 2, 2023 10:49:57 PM</span>
-	<span class='label end-time'>Jul 2, 2023 10:50:03 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+996ms</span>
+	<span class='label start-time'>Jul 4, 2023 08:19:22 PM</span>
+	<span class='label end-time'>Jul 4, 2023 08:19:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+182ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -147,7 +149,7 @@
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>10:50:03 PM</td>
+				<td class='timestamp'>8:19:28 PM</td>
 				<td class='step-details'>
 						login to account with valid email and valid password
 					
@@ -155,7 +157,7 @@
 			</tr>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>10:50:03 PM</td>
+				<td class='timestamp'>8:19:28 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -164,6 +166,118 @@
 		</tbody>
 	</table>
 </div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Function Test</span>
+						<span class='test-time'>Jul 4, 2023 08:19:28 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jul 4, 2023 08:19:28 PM</span>
+	<span class='label end-time'>Jul 4, 2023 08:19:58 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 30s+70ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>8:19:58 PM</td>
+				<td class='step-details'>
+						<textarea disabled class="code-block">com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator("xpath=//button[@title='Close']")
+============================================================
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator("xpath=//button[@title='Close']")
+============================================================
+    at ProgressController.run (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\progress.js:88:26)
+    at Frame.click (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\frames.js:998:23)
+    at FrameDispatcher.click (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\dispatchers\frameDispatcher.js:151:30)
+    at DispatcherConnection.dispatch (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\dispatchers\dispatcher.js:312:46)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:111)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:126)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:102)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.PageImpl.lambda$click$17(PageImpl.java:586)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:87)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.PageImpl.click(PageImpl.java:585)
+	at com.microsoft.playwright.Page.click(Page.java:3741)
+	at com.ourvirtualmarket.pages.DashboardPage.closePopUp(DashboardPage.java:20)
+	at com.ourvirtualmarket.pages.LoginPage.login(LoginPage.java:37)
+	at com.ourvirtualmarket.tests.LoginTest.testLogin2(LoginTest.java:28)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator("xpath=//button[@title='Close']")
+============================================================
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator("xpath=//button[@title='Close']")
+============================================================
+    at ProgressController.run (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\progress.js:88:26)
+    at Frame.click (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\frames.js:998:23)
+    at FrameDispatcher.click (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\dispatchers\frameDispatcher.js:151:30)
+    at DispatcherConnection.dispatch (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\dispatchers\dispatcher.js:312:46)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:224)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:206)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:109)
+	... 38 more
+</textarea>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+						<ul class='screenshots'>
+							<li><img class='r-img' onerror='this.style.display="none"' data-featherlight='screenshots\testLogin2.png' src='screenshots\testLogin2.png' data-src='screenshots\testLogin2.png'></li>
+						</ul>
 					</div>
 				</li>
 			</ul>
@@ -186,7 +300,136 @@
 	</div>
 	<!-- subview right -->
 </div>
-<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+<!-- test view --><!-- category view --><div id='exception-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='exception-collection' class='exception-collection'>
+				<li class='exception displayed active'>
+					<div class='exception-heading'>
+						<span class='exception-name'>com.microsoft.playwright.TimeoutError</span>
+						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+					</div>
+					<div class='exception-content hide'>
+						<div class='exception-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jul 4, 2023 08:19:28 PM</td>
+										<td class='linked' test-id='2'>Login Function Test</td>
+										<td>
+											<textarea disabled class="code-block">com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator("xpath=//button[@title='Close']")
+============================================================
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator("xpath=//button[@title='Close']")
+============================================================
+    at ProgressController.run (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\progress.js:88:26)
+    at Frame.click (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\frames.js:998:23)
+    at FrameDispatcher.click (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\dispatchers\frameDispatcher.js:151:30)
+    at DispatcherConnection.dispatch (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\dispatchers\dispatcher.js:312:46)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:111)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:126)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:102)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.PageImpl.lambda$click$17(PageImpl.java:586)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:87)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.PageImpl.click(PageImpl.java:585)
+	at com.microsoft.playwright.Page.click(Page.java:3741)
+	at com.ourvirtualmarket.pages.DashboardPage.closePopUp(DashboardPage.java:20)
+	at com.ourvirtualmarket.pages.LoginPage.login(LoginPage.java:37)
+	at com.ourvirtualmarket.tests.LoginTest.testLogin2(LoginTest.java:28)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator("xpath=//button[@title='Close']")
+============================================================
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator("xpath=//button[@title='Close']")
+============================================================
+    at ProgressController.run (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\progress.js:88:26)
+    at Frame.click (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\frames.js:998:23)
+    at FrameDispatcher.click (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\dispatchers\frameDispatcher.js:151:30)
+    at DispatcherConnection.dispatch (C:\Users\Lenovo\AppData\Local\Temp\playwright-java-2764813392684425746\package\lib\server\dispatchers\dispatcher.js:312:46)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:224)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:206)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:109)
+	... 38 more
+</textarea>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='exception-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- exception view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -194,7 +437,7 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>2</div>
 				</div>
 			</div>
 			<div class='col s2'>
@@ -206,19 +449,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jul 2, 2023 10:49:15 PM</div>
+					<div class='panel-lead'>Jul 4, 2023 08:18:52 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jul 2, 2023 10:50:05 PM</div>
+			 		<div class='panel-lead'>Jul 4, 2023 08:20:00 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 50s+30ms</div>
+					<div class='panel-lead'>0h 1m 8s+147ms</div>
 				</div>
 			</div>
 		</div>
@@ -229,14 +472,14 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 1,
+                parentCount: 2,
 				passParent: 1,
-				failParent: 0,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 1,
 				childCount: 0,
 				passChild: 0,
 				failChild: 0,
@@ -261,7 +504,7 @@
 		</script>
 		<script>
 			var timeline = {
-			        "Login Function Test":5.996
+			        "Login Function Test":6.182,"Login Function Test":30.07
 			};
 		</script>
 		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static com.ourvirtualmarket.utilities.Driver.getPage;
 
-public class LoginTest extends TestBase{
+public class LoginTest extends BaseTest {
     LoginPage loginPage;
     DashboardPage dashboardPage;
     @Test
@@ -19,6 +19,18 @@ public class LoginTest extends TestBase{
         Assert.assertTrue(dashboardPage.isLogoutButtonVisible(), "Logout button is not visible.");
         test.pass("login to account with valid email and valid password");
     }
+
+    @Test
+    public void testLogin2() {
+        test = extent.createTest("Login Function Test");
+        loginPage = new LoginPage(getPage());
+        dashboardPage = new DashboardPage(getPage());
+        loginPage.login("kraft@","Kraft12345");
+        Assert.assertTrue(dashboardPage.isLogoutButtonVisible(), "Logout button is not visible.");
+        test.pass("login to account with valid email and valid password");
+    }
+
+
 }
 
 
